@@ -1,20 +1,22 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { PortalProvider } from '@/components/primitves/portal/portal-provider';
+import PopConfirmProvider from '@/components/ui-presets/popconfirm';
+import { SafeAreaProvider } from '@/components/ui/safe-area-content';
+import { Toaster } from '@/components/ui/toast';
+import Home from '@/pages/home/home';
+import { ThemeProvider } from '@/theme/theme-provider/theme-provider';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <ThemeProvider>
+      <SafeAreaProvider>
+        <PortalProvider>
+          <PopConfirmProvider>
+            <Toaster>
+              <Home />
+            </Toaster>
+          </PopConfirmProvider>
+        </PortalProvider>
+      </SafeAreaProvider>
+    </ThemeProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
