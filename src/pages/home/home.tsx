@@ -18,6 +18,7 @@ import SheetExample from '../examples/sheet-example';
 import AccordionExample from '../examples/accordion';
 import RadioGroupExample from '../examples/radio-group-example';
 import BreadcrumbExample from '../examples/breadcrumb';
+import TimelineExample from '../examples/timeline-example';
 
 const homeStyles = ({ sizes, colors }: ThemeValue) =>
   StyleSheet.create({
@@ -67,6 +68,8 @@ const Home = () => {
           <BreadcrumbExample />
           <Separator />
           <AccordionExample />
+          <Separator />
+          <TimelineExample />
         </ContainerScrollView>
       </KeyboardAvoidingContent>
     </SafeAreaContent>
