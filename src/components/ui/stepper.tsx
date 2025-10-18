@@ -150,9 +150,9 @@ const stepperIconStyles = ({ sizes, colors }: ThemeValue) =>
       alignItems: 'center',
       backgroundColor: colors.muted,
       borderRadius: sizes.radius.full,
-      height: sizes.dimension.md * 1.2,
+      height: sizes.dimension.lg,
       justifyContent: 'center',
-      width: sizes.dimension.md * 1.2,
+      width: sizes.dimension.lg,
     },
     vertical: {
       marginTop: sizes.margin.sm,
@@ -202,21 +202,22 @@ const stepperConnectorStyles = ({ sizes, colors }: ThemeValue) =>
     completed: {
       backgroundColor: colors.primary,
     },
+
     horizontal: {
       height: sizes.border.sm,
+      width: '100%',
       left: '50%',
-      marginHorizontal: sizes.margin['2xl'],
+      marginHorizontal: sizes.dimension.lg / 2,
       position: 'absolute',
       right: '-50%',
     },
 
     separator: {
       backgroundColor: colors.border,
-      flex: 1,
     },
     vertical: {
-      marginVertical: sizes.margin.sm,
       width: sizes.border.sm,
+      height: '100%',
     },
   });
 
@@ -244,7 +245,7 @@ const stepperContentStyles = ({ sizes }: ThemeValue) =>
     },
     horizontal: {
       minWidth: sizes.dimension.md,
-      paddingRight: sizes.padding.lg,
+      paddingHorizontal: sizes.padding.sm,
     },
     vertical: {
       paddingBottom: sizes.padding['2xl'],

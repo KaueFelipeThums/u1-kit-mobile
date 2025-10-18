@@ -18,7 +18,21 @@ const DialogExample = () => {
     <View style={styles.content}>
       <Text weight="medium">Dialog</Text>
 
-      <Dialog title="Dialog" description="Dialog description" trigger={<Button variant="default">Open Dialog</Button>}>
+      <Dialog
+        title="Dialog"
+        description="Dialog description"
+        footer={
+          <>
+            <Button variant="outline" iconPlacement="right" icon="Send">
+              Submit
+            </Button>
+            <Button variant="destructive" iconPlacement="right" icon="RefreshCcw">
+              Reset
+            </Button>
+          </>
+        }
+        trigger={<Button variant="default">Open Dialog</Button>}
+      >
         <Text>
           Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
           standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to
