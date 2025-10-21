@@ -1,3 +1,4 @@
+import { set } from 'date-fns';
 import { useState, useRef, useCallback, useEffect } from 'react';
 import { Animated, Dimensions, Easing, InteractionManager } from 'react-native';
 
@@ -37,7 +38,7 @@ export function useSheetAnimation({ open, side }: { open: boolean; side: SheetSi
   const opacityAnim = useRef(new Animated.Value(0)).current;
 
   const animateIn = useCallback(() => {
-    InteractionManager.runAfterInteractions(() => {
+    setImmediate(() => {
       requestAnimationFrame(() => {
         Animated.parallel([
           Animated.spring(translateAnim, {
@@ -60,7 +61,7 @@ export function useSheetAnimation({ open, side }: { open: boolean; side: SheetSi
   }, [opacityAnim, translateAnim]);
 
   const animateOut = useCallback(() => {
-    InteractionManager.runAfterInteractions(() => {
+    setImmediate(() => {
       requestAnimationFrame(() => {
         Animated.parallel([
           Animated.timing(translateAnim, {

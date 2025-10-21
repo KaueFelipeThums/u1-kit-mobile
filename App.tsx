@@ -7,7 +7,7 @@ import { ThemeProvider } from '@/theme/theme-provider/theme-provider';
 
 export default function App() {
   return (
-    <ThemeProvider>
+    <ThemeProvider defaultTheme="dark">
       <SafeAreaProvider>
         <PortalProvider>
           <PopConfirmProvider>

@@ -1,5 +1,5 @@
 import { useState, useRef, useCallback, useEffect } from 'react';
-import { Animated, InteractionManager } from 'react-native';
+import { Animated } from 'react-native';
 
 type AnimationControls = {
   visible: boolean;
@@ -16,7 +16,7 @@ export function useDialogAnimation({ open }: { open: boolean }): AnimationContro
   const opacityAnim = useRef(new Animated.Value(0)).current;
 
   const animateIn = useCallback(() => {
-    InteractionManager.runAfterInteractions(() => {
+    setImmediate(() => {
       requestAnimationFrame(() => {
         Animated.parallel([
           Animated.spring(scaleAnim, { toValue: 1, useNativeDriver: true, friction: 8, tension: 50 }),
@@ -27,7 +27,7 @@ export function useDialogAnimation({ open }: { open: boolean }): AnimationContro
   }, [opacityAnim, scaleAnim]);
 
   const animateOut = useCallback(() => {
-    InteractionManager.runAfterInteractions(() => {
+    setImmediate(() => {
       requestAnimationFrame(() => {
         Animated.parallel([
           Animated.spring(scaleAnim, { toValue: 0.8, useNativeDriver: true, friction: 40, tension: 700 }),

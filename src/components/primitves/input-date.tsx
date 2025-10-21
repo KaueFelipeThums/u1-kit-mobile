@@ -1,6 +1,6 @@
 import { formatDate, isValid as isValidDate, parse } from 'date-fns';
 import React, { useState, useEffect, useRef } from 'react';
-import { NativeSyntheticEvent, TextInput, TextInputFocusEventData } from 'react-native';
+import { TextInput } from 'react-native';
 import { useControllableState } from '@/hooks/use-controllable-state';
 
 const formatMasked = (raw: string, format: string): string => {
@@ -29,7 +29,7 @@ type RootContext = {
   maxDate?: Date;
   dateFormat: SupportedFormats;
   onInputChange: (value: string) => void;
-  onInputBlur: (event: NativeSyntheticEvent<TextInputFocusEventData>) => void;
+  onInputBlur: () => void;
   isValid: boolean;
   disabled?: boolean;
 };
@@ -49,7 +49,7 @@ type RootProps = {
 };
 
 const Root = ({
-  value: valueProp = null,
+  value: valueProp,
   onValueChange: onValueChangeProp,
   minDate,
   maxDate,
@@ -155,7 +155,7 @@ const Input = ({ onBlur, placeholder, editable, ...rest }: InputProps) => {
     <TextInput
       {...rest}
       onBlur={(event) => {
-        handleBlur(event);
+        handleBlur();
         onBlur?.(event);
       }}
       editable={editable || !disabled}

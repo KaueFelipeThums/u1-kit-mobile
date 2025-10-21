@@ -24,6 +24,7 @@ import StepperExample from '../examples/stepper-example';
 const homeStyles = ({ sizes, colors }: ThemeValue) =>
   StyleSheet.create({
     content: {
+      backgroundColor: colors.background,
       paddingHorizontal: sizes.padding.xl,
       gap: sizes.padding.xl,
     },

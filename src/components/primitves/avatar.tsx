@@ -1,11 +1,5 @@
 import * as React from 'react';
-import {
-  type ImageErrorEventData,
-  type ImageLoadEventData,
-  type NativeSyntheticEvent,
-  Image as RNImage,
-  View,
-} from 'react-native';
+import { ImageErrorEvent, ImageLoadEvent, type NativeSyntheticEvent, Image as RNImage, View } from 'react-native';
 
 type AvatarState = 'loading' | 'error' | 'loaded';
 
@@ -46,7 +40,7 @@ const Image = ({ onLoad: onLoadProps, onError: onErrorProps, onLoadingStatusChan
   const { alt, setStatus, status } = useRootContext();
 
   const onLoad = React.useCallback(
-    (e: NativeSyntheticEvent<ImageLoadEventData>) => {
+    (e: ImageLoadEvent) => {
       setStatus('loaded');
       onLoadingStatusChange?.('loaded');
       onLoadProps?.(e);
@@ -55,7 +49,7 @@ const Image = ({ onLoad: onLoadProps, onError: onErrorProps, onLoadingStatusChan
   );
 
   const onError = React.useCallback(
-    (e: NativeSyntheticEvent<ImageErrorEventData>) => {
+    (e: ImageErrorEvent) => {
       setStatus('error');
       onLoadingStatusChange?.('error');
       onErrorProps?.(e);
