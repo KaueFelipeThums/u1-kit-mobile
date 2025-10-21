@@ -495,7 +495,7 @@ const selectMultipleTagStyles = ({ sizes, colors }: ThemeValue) =>
     },
     tag: {
       alignItems: 'center',
-      backgroundColor: colors.seccondary,
+      backgroundColor: colors.secondary,
       borderRadius: sizes.radius.default,
       flexDirection: 'row',
       flex: 0,

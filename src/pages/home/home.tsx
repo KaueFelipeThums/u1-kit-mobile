@@ -20,6 +20,17 @@ import RadioGroupExample from '../examples/radio-group-example';
 import BreadcrumbExample from '../examples/breadcrumb';
 import TimelineExample from '../examples/timeline-example';
 import StepperExample from '../examples/stepper-example';
+import ToastExample from '../examples/toast-example';
+import FileListExample from '../examples/file-list-example';
+import EmptyExample from '../examples/empty-example';
+import ItemExample from '../examples/item-example';
+import SegmentExample from '../examples/segment-example';
+import TabsExample from '../examples/tabs-example';
+import CardExample from '../examples/card-example';
+import BadgeExample from '../examples/badge-example';
+import MenuActionsExample from '../examples/menu-actions-example';
+import SkeletonExample from '../examples/skeleton-example';
+import SwitchExample from '../examples/switch-example';
 
 const homeStyles = ({ sizes, colors }: ThemeValue) =>
   StyleSheet.create({
@@ -74,6 +85,28 @@ const Home = () => {
           <TimelineExample />
           <Separator />
           <StepperExample />
+          <Separator />
+          <ToastExample />
+          <Separator />
+          <TabsExample />
+          <Separator />
+          <FileListExample />
+          <Separator />
+          <EmptyExample />
+          <Separator />
+          <ItemExample />
+          <Separator />
+          <SegmentExample />
+          <Separator />
+          <CardExample />
+          <Separator />
+          <BadgeExample />
+          <Separator />
+          <MenuActionsExample />
+          <Separator />
+          <SkeletonExample />
+          <Separator />
+          <SwitchExample />
         </ContainerScrollView>
       </KeyboardAvoidingContent>
     </SafeAreaContent>

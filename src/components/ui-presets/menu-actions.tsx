@@ -10,6 +10,7 @@ import {
   MenuActionsTrigger,
 } from '@/components/ui/menu-actions';
 import { Text } from '@/components/ui/text';
+import { Separator } from '../ui/separator';
 
 type MenuActionsItemProps = {
   key: React.Key;
@@ -35,15 +36,21 @@ const MenuActions = ({ items, children, withScroll = false, bodyHeight, ...props
       <MenuActionsTrigger asChild>{children}</MenuActionsTrigger>
       <MenuActionsContent>
         <Body style={{ height: bodyHeight }}>
-          {items.map((item) => (
-            <MenuActionsItem onPress={() => item.onPress?.()} key={item.key} disabled={item.disabled}>
-              {item.icon}
-              <MenuActionsItemContent>
-                {typeof item.label === 'string' ? <Text>{item.label}</Text> : item.label}
-              </MenuActionsItemContent>
-              {item.shortcut}
-            </MenuActionsItem>
-          ))}
+          {items.map((item) => {
+            if (item.type === 'separator') {
+              return <Separator key={item.key} />;
+            }
+
+            return (
+              <MenuActionsItem onPress={() => item.onPress?.()} key={item.key} disabled={item.disabled}>
+                {item.icon}
+                <MenuActionsItemContent>
+                  {typeof item.label === 'string' ? <Text>{item.label}</Text> : item.label}
+                </MenuActionsItemContent>
+                {item.shortcut}
+              </MenuActionsItem>
+            );
+          })}
         </Body>
       </MenuActionsContent>
     </BaseMenuActions>

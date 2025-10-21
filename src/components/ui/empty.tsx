@@ -38,7 +38,7 @@ type EmptyIconProps = Omit<React.ComponentPropsWithRef<typeof Icon>, 'name'> & {
   name?: IconName;
 };
 
-const EmptyIcon = ({ name = 'Inbox', size, color, ...props }: EmptyIconProps) => {
+const EmptyIcon = ({ name = 'Search', size, color, ...props }: EmptyIconProps) => {
   const { colors, sizes } = useTheme();
   return <Icon name={name} size={size ?? sizes.dimension.xl} color={color ?? colors.border} {...props} />;
 };

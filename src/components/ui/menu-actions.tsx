@@ -269,6 +269,9 @@ const menuActionsItemStyles = ({ sizes }: ThemeValue) =>
       overflow: 'hidden',
       paddingHorizontal: sizes.padding.xl,
     },
+    disabled: {
+      opacity: 0.8,
+    },
     pressed: {
       opacity: 0.8,
     },
@@ -287,6 +290,7 @@ const MenuActionsItem = ({ style, ...props }: React.ComponentPropsWithRef<typeof
       style={(triggerState) => [
         triggerState.pressed && styles.pressed,
         styles.item,
+        props.disabled && styles.disabled,
         typeof style === 'function' ? style(triggerState) : style,
       ]}
       {...props}

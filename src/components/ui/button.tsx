@@ -12,7 +12,7 @@ type ButtonProps = Omit<ComponentPropsWithAsChild<typeof Slot.Pressable>, 'child
   disabled?: boolean;
   invalid?: boolean;
   size?: 'default' | 'sm' | 'lg' | 'icon';
-  variant?: 'default' | 'destructive' | 'ghost' | 'link' | 'outline' | 'seccondary';
+  variant?: 'default' | 'destructive' | 'ghost' | 'link' | 'outline' | 'secondary';
   children?: ((pressableState: PressableStateCallbackType, textStyle: TextStyle) => React.ReactNode) | React.ReactNode;
 };
 
@@ -81,14 +81,14 @@ const buttonVariants = ({ sizes, colors }: ThemeValue) =>
       borderColor: colors.border,
       borderWidth: sizes.border.sm,
     },
-    seccondary: {
-      backgroundColor: colors.seccondary,
+    secondary: {
+      backgroundColor: colors.secondary,
     },
   });
 
 type ButtonContextProps = {
   size?: 'default' | 'sm' | 'lg' | 'icon';
-  variant?: 'default' | 'destructive' | 'ghost' | 'link' | 'outline' | 'seccondary';
+  variant?: 'default' | 'destructive' | 'ghost' | 'link' | 'outline' | 'secondary';
 };
 
 export const ButtonContext = React.createContext<ButtonContextProps>({ size: 'default', variant: 'default' });
@@ -168,8 +168,8 @@ const buttonTextVariants = ({ colors }: ThemeValue) =>
       color: colors.foreground,
       flexShrink: 1,
     },
-    seccondary: {
-      color: colors.seccondaryForeground,
+    secondary: {
+      color: colors.secondaryForeground,
       flexShrink: 1,
     },
   });
@@ -189,7 +189,7 @@ const ButtonIcon = ({ color, ...props }: React.ComponentPropsWithRef<typeof Icon
     ghost: colors.foreground,
     link: colors.primary,
     outline: colors.foreground,
-    seccondary: colors.seccondaryForeground,
+    secondary: colors.secondaryForeground,
   };
 
   return <Icon color={color ?? buttonIconColors[variant]} {...props} />;
@@ -204,7 +204,7 @@ const ButtonLoader = ({ color, ...props }: React.ComponentPropsWithRef<typeof Ac
     ghost: colors.foreground,
     link: colors.primary,
     outline: colors.foreground,
-    seccondary: colors.seccondaryForeground,
+    secondary: colors.secondaryForeground,
   };
 
   return <ActivityIndicator size="small" color={color ?? buttonIconColors[variant]} {...props} />;

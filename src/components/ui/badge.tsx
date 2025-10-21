@@ -5,7 +5,7 @@ import { useStyles } from '@/theme/hooks/use-styles';
 import { ThemeValue } from '@/theme/theme-provider/theme-provider-types';
 
 type BadgeContextProps = {
-  variant: 'default' | 'seccondary' | 'destructive' | 'outline';
+  variant: 'default' | 'secondary' | 'destructive' | 'outline';
 };
 
 const BadgeContext = React.createContext<BadgeContextProps>({ variant: 'default' });
@@ -19,7 +19,7 @@ export const useBadgeContext = () => {
 };
 
 type BadgeProps = React.ComponentPropsWithRef<typeof View> & {
-  variant?: 'default' | 'seccondary' | 'destructive' | 'outline';
+  variant?: 'default' | 'secondary' | 'destructive' | 'outline';
 };
 
 const badgeStyles = ({ sizes, colors }: ThemeValue) =>
@@ -53,8 +53,8 @@ const badgeVariants = ({ colors }: ThemeValue) =>
       backgroundColor: colors.background,
       borderColor: colors.border,
     },
-    seccondary: {
-      backgroundColor: colors.seccondary,
+    secondary: {
+      backgroundColor: colors.secondary,
       borderColor: colors.transparent,
     },
   });
@@ -88,8 +88,8 @@ const badgeTextVariants = ({ colors }: ThemeValue) =>
     outline: {
       color: colors.foreground,
     },
-    seccondary: {
-      color: colors.seccondaryForeground,
+    secondary: {
+      color: colors.secondaryForeground,
     },
   });
 

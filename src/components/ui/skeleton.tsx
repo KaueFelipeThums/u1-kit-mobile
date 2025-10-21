@@ -10,7 +10,7 @@ type SkeletonProps = React.ComponentPropsWithRef<typeof View> & {
 const skeletonStyles = ({ colors }: ThemeValue) =>
   StyleSheet.create({
     skeleton: {
-      backgroundColor: colors.seccondary,
+      backgroundColor: colors.secondary,
     },
   });
 

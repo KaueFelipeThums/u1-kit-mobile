@@ -18,8 +18,8 @@ export default {
       primary: '#0072BC',
       primaryForeground: '#ffffff',
 
-      seccondary: '#f0f0f0',
-      seccondaryForeground: '#1c1917',
+      secondary: '#f0f0f0',
+      secondaryForeground: '#1c1917',
 
       muted: '#f5f5f5',
       mutedForeground: '#8c8c8c',
@@ -46,8 +46,8 @@ export default {
       primary: '#0072BC',
       primaryForeground: '#1c1917',
 
-      seccondary: '#44403c',
-      seccondaryForeground: '#e7e5e4',
+      secondary: '#44403c',
+      secondaryForeground: '#e7e5e4',
 
       muted: '#57534e',
       mutedForeground: '#d6d3d1',
